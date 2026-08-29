@@ -8,6 +8,7 @@ PixelShuffle is not intended to protect sensitive information or replace establi
 📱 Demo
 The application takes an image, divides it into a 7 × 7 grid, and rearranges the resulting tiles.
 Original
+
 ┌─────────────────┐
 │  01 02 03 04 05 │
 │  06 07 08 09 10 │
