@@ -177,7 +177,7 @@ N = number of image tiles
 For the current implementation:
 N = 49
 
-###🔑 Is This Real Encryption?
+### 🔑 Is This Real Encryption?
 No.
 This project intentionally demonstrates the difference between scrambling and cryptographic encryption.
 The image content itself is not cryptographically transformed. Instead, the positions of image blocks are rearranged.
@@ -187,24 +187,24 @@ For real-world data protection, established algorithms such as AES-GCM should be
 
 ## 🔎 Security Analysis
 The project is intentionally simple so that its limitations can be explored.
-### 1. Deterministic Transformation
+#### 1. Deterministic Transformation
 The same input and key produce the same tile arrangement.
 This makes the transformation predictable.
 
-### 2. Limited Transformation
+#### 2. Limited Transformation
 Only the position of the tiles changes.
 The pixels inside each tile remain unchanged.
 
 An attacker may therefore still obtain information from individual blocks.
 
-### 3. No Authentication
+#### 3. No Authentication
 The algorithm does not provide integrity or authenticity.
 An attacker could potentially modify the scrambled data without the system detecting the modification.
 
-### 4. No Cryptographic Primitive
+#### 4. No Cryptographic Primitive
 The algorithm is not based on a standardized cryptographic construction and has not undergone the extensive analysis expected of a real cryptographic algorithm.
 
-### 5. Known-Plaintext Analysis
+#### 5. Known-Plaintext Analysis
 If an attacker obtains both an original image and its scrambled version, the relationship between the original tile positions and scrambled positions can potentially be analyzed.
 This makes the transformation unsuitable for protecting confidential information.
 
