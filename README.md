@@ -9,41 +9,160 @@ PixelShuffle is not intended to protect sensitive information or replace establi
 The application takes an image, divides it into a 7 × 7 grid, and rearranges the resulting tiles.
 Original
 
-┌─────────────────┐
-│  01 02 03 04 05 │
-│  06 07 08 09 10 │
-│  11 12 13 14 15 │
-│  16 17 18 19 20 │
-│       ...       │
-└─────────────────┘
+<table>
+  <tr>
+    <td>01</td>
+    <td>02</td>
+    <td>03</td>
+    <td>04</td>
+    <td>05</td>
+    <td>06</td>
+    <td>07</td>
+  </tr>
+  <tr>
+    <td>08</td>
+    <td>09</td>
+    <td>10</td>
+    <td>11</td>
+    <td>12</td>
+    <td>13</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>16</td>
+    <td>17</td>
+    <td>18</td>
+    <td>19</td>
+    <td>20</td>
+    <td>21</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>23</td>
+    <td>24</td>
+    <td>25</td>
+    <td>26</td>
+    <td>27</td>
+    <td>28</td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>30</td>
+    <td>31</td>
+    <td>32</td>
+    <td>33</td>
+    <td>34</td>
+    <td>35</td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td>37</td>
+    <td>38</td>
+    <td>39</td>
+    <td>40</td>
+    <td>41</td>
+    <td>42</td>
+  </tr>
+  <tr>
+    <td>43</td>
+    <td>44</td>
+    <td>45</td>
+    <td>46</td>
+    <td>47</td>
+    <td>48</td>
+    <td>49</td>
+  </tr>
+</table>
+
 
 Scrambled
-┌─────────────────┐
-│  27 04 39 12 08 │
-│  16 31 02 44 19 │
-│  07 22 41 03 35 │
-│  14 09 28 46 11 │
-│       ...       │
-└─────────────────┘
+<table>
+  <tr>
+    <td>27</td>
+    <td>04</td>
+    <td>39</td>
+    <td>12</td>
+    <td>08</td>
+    <td>44</td>
+    <td>19</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>31</td>
+    <td>02</td>
+    <td>48</td>
+    <td>22</td>
+    <td>07</td>
+    <td>35</td>
+  </tr>
+  <tr>
+    <td>41</td>
+    <td>03</td>
+    <td>14</td>
+    <td>29</td>
+    <td>46</td>
+    <td>11</td>
+    <td>24</td>
+  </tr>
+  <tr>
+    <td>09</td>
+    <td>28</td>
+    <td>43</td>
+    <td>17</td>
+    <td>05</td>
+    <td>37</td>
+    <td>21</td>
+  </tr>
+  <tr>
+    <td>33</td>
+    <td>10</td>
+    <td>45</td>
+    <td>18</td>
+    <td>06</td>
+    <td>32</td>
+    <td>15</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td>23</td>
+    <td>01</td>
+    <td>34</td>
+    <td>13</td>
+    <td>49</td>
+    <td>26</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>38</td>
+    <td>30</td>
+    <td>42</td>
+    <td>25</td>
+    <td>36</td>
+    <td>47</td>
+  </tr>
+</table>
+
 
 The actual application displays the resulting image rather than tile numbers.
-🧠 How It Works
+## 🧠 How It Works
 #### The image is divided into 49 individual tiles:
-Original Image
-      │
-      ▼
- ┌───────────┐
- │ 7 × 7 Grid│
- └───────────┘
-      │
-      ▼
-  49 Image Tiles
-      │
-      ▼
- Mathematical Permutation
-      │
-      ▼
- Scrambled Image
+🧠 How It Works
+The image is divided into 49 individual tiles (7 × 7).
+<table>
+  <tr>
+    <td align="center"><strong>Original Image</strong></td>
+    <td align="center">→</td>
+    <td align="center"><strong>7 × 7 Grid</strong></td>
+    <td align="center">→</td>
+    <td align="center"><strong>49 Tiles</strong></td>
+    <td align="center">→</td>
+    <td align="center"><strong>Permutation</strong></td>
+    <td align="center">→</td>
+    <td align="center"><strong>Scrambled Image</strong></td>
+  </tr>
+</table>
+
 
 Each tile is assigned a new position using a deterministic transformation.
 The basic transformation is:
@@ -106,31 +225,25 @@ The project also helped me experiment with:
 
 ## 🏗️ Architecture
 The project follows a simple MVVM structure.
-┌────────────────────┐
-│        View        │
-│    ContentView     │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│     ViewModel      │
-│ ContentViewModel   │
-│                    │
-│ • Image processing │
-│ • Tile generation  │
-│ • Permutation      │
-│ • Application state│
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│       Model        │
-│ ImagePuzzleModel   │
-│                    │
-│ • Grid size        │
-│ • Key              │
-│ • Encryption state │
-└────────────────────┘
+<table>
+  <tr>
+    <th>Layer</th>
+    <th>Responsibility</th>
+  </tr>
+  <tr>
+    <td><strong>View</strong></td>
+    <td>Displays the image grid, controls, and information.</td>
+  </tr>
+  <tr>
+    <td><strong>ViewModel</strong></td>
+    <td>Handles image processing, tile permutation, and application state.</td>
+  </tr>
+  <tr>
+    <td><strong>Model</strong></td>
+    <td>Stores the grid size, encryption key, and encryption state.</td>
+  </tr>
+</table>
+
 
 The separation keeps the UI independent from the image-processing and permutation logic.
 
