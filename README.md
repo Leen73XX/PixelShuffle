@@ -79,6 +79,7 @@ The application takes an image, divides it into a 7 × 7 grid, and rearranges th
   </tr>
 </table>
 </p>
+
 ### Scrambled
 <p>
 <img src="images/pixel_after.png" width="350">
