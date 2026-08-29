@@ -11,13 +11,143 @@ PixelShuffle is not intended to protect sensitive information or replace establi
 The application takes an image, divides it into a 7 × 7 grid, and rearranges the resulting tiles.
 
 ### Original
-
+<p>
  <img src="images/pixel_before.png" width="350">
-
+<table>
+  <tr>
+    <td>01</td>
+    <td>02</td>
+    <td>03</td>
+    <td>04</td>
+    <td>05</td>
+    <td>06</td>
+    <td>07</td>
+  </tr>
+  <tr>
+    <td>08</td>
+    <td>09</td>
+    <td>10</td>
+    <td>11</td>
+    <td>12</td>
+    <td>13</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>16</td>
+    <td>17</td>
+    <td>18</td>
+    <td>19</td>
+    <td>20</td>
+    <td>21</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>23</td>
+    <td>24</td>
+    <td>25</td>
+    <td>26</td>
+    <td>27</td>
+    <td>28</td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>30</td>
+    <td>31</td>
+    <td>32</td>
+    <td>33</td>
+    <td>34</td>
+    <td>35</td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td>37</td>
+    <td>38</td>
+    <td>39</td>
+    <td>40</td>
+    <td>41</td>
+    <td>42</td>
+  </tr>
+  <tr>
+    <td>43</td>
+    <td>44</td>
+    <td>45</td>
+    <td>46</td>
+    <td>47</td>
+    <td>48</td>
+    <td>49</td>
+  </tr>
+</table>
+</p>
 ### Scrambled
-
+<p>
 <img src="images/pixel_after.png" width="350">
-
+ <table>
+  <tr>
+    <td>27</td>
+    <td>04</td>
+    <td>39</td>
+    <td>12</td>
+    <td>08</td>
+    <td>44</td>
+    <td>19</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>31</td>
+    <td>02</td>
+    <td>48</td>
+    <td>22</td>
+    <td>07</td>
+    <td>35</td>
+  </tr>
+  <tr>
+    <td>41</td>
+    <td>03</td>
+    <td>14</td>
+    <td>29</td>
+    <td>46</td>
+    <td>11</td>
+    <td>24</td>
+  </tr>
+  <tr>
+    <td>09</td>
+    <td>28</td>
+    <td>43</td>
+    <td>17</td>
+    <td>05</td>
+    <td>37</td>
+    <td>21</td>
+  </tr>
+  <tr>
+    <td>33</td>
+    <td>10</td>
+    <td>45</td>
+    <td>18</td>
+    <td>06</td>
+    <td>32</td>
+    <td>15</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td>23</td>
+    <td>01</td>
+    <td>34</td>
+    <td>13</td>
+    <td>49</td>
+    <td>26</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>38</td>
+    <td>30</td>
+    <td>42</td>
+    <td>25</td>
+    <td>36</td>
+    <td>47</td>
+  </tr>
+</table>
+</p>
 The actual application displays the resulting image rather than tile numbers.
 ## 🧠 How It Works
 #### The image is divided into 49 individual tiles:
