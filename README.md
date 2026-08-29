@@ -1,4 +1,5 @@
 # 🔐 PixelShuffle
+ <img src="images/pixelShuffle.zip" width="350">
 ## Educational Image Encryption & Permutation Demo
 PixelShuffle is a small iOS project that explores how an image can be visually scrambled by dividing it into smaller tiles and rearranging them using a deterministic mathematical transformation.
 The project was created as a personal experiment to explore concepts related to cryptography, permutation, key-based transformations, and the difference between visual obfuscation and actual secure encryption.
@@ -74,7 +75,7 @@ Original
     <td>49</td>
   </tr>
 </table>
-
+ <img src="images/pixel_before.png" width="350">
 
 Scrambled
 <table>
@@ -142,7 +143,7 @@ Scrambled
     <td>47</td>
   </tr>
 </table>
-
+<img src="images/pixel_after.png" width="350">
 
 The actual application displays the resulting image rather than tile numbers.
 ## 🧠 How It Works
